@@ -46,13 +46,12 @@ class DoublyLinkedList
     new_node = DoublyLinkedNode.new(new_value)
     new_parent_node = access(value)
 
-    new_child_node = new_parent_node.child if new_parent_node.child
-
+    new_child_node = new_parent_node.child 
     new_node.parent = new_parent_node
     new_node.child = new_child_node
 
-    new_parent_node.child = new_node
-    new_child_node.parent = new_node
+    new_parent_node.child = new_node if new_parent_node.child
+    new_child_node.parent = new_node 
 
   end
 
